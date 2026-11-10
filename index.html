@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thailand Stay ค้นหาและจองที่พักสวยทั่วประเทศไทย">
+  <meta name="theme-color" content="#0f766e">
+  <title>Thailand Stay | ค้นหาที่พักทั่วไทย</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Thailand Stay หน้าแรก"><span class="brand-mark">T</span><span>thailand<span class="brand-light">stay</span></span></a>
+    <nav class="main-nav" aria-label="เมนูหลัก">
+      <a href="#stays">ที่พัก</a><a href="#why-us">ทำไมต้องเรา</a><a href="#my-bookings">การจองของฉัน</a>
+    </nav>
+    <a class="header-cta" href="#stays">ค้นหาที่พัก <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="eyebrow light">DISCOVER THAILAND, STAY YOUR WAY</span>
+        <h1>ออกไปค้นพบ<br><em>ที่พักในฝัน</em> ของคุณ</h1>
+        <p>ค้นหาที่พักดี ๆ ทั่วประเทศไทย แล้วเริ่มต้นทริปที่คุณรอคอย</p>
+      </div>
+      <form class="search-panel" id="searchForm">
+        <label class="search-field"><span>จุดหมายปลายทาง</span>
+          <select id="destination"><option value="">ทุกจังหวัด</option><option>กรุงเทพมหานคร</option><option>เชียงใหม่</option><option>ภูเก็ต</option><option>กระบี่</option><option>ชลบุรี</option><option>ประจวบคีรีขันธ์</option></select>
+        </label>
+        <label class="search-field"><span>เช็กอิน</span><input id="checkIn" type="date" required></label>
+        <label class="search-field"><span>เช็กเอาต์</span><input id="checkOut" type="date" required></label>
+        <label class="search-field guests-field"><span>ผู้เข้าพัก</span><select id="guests"><option value="1">1 คน</option><option value="2" selected>2 คน</option><option value="3">3 คน</option><option value="4">4 คน</option><option value="5">5 คนขึ้นไป</option></select></label>
+        <button class="search-button" type="submit"><span>⌕</span> ค้นหาที่พัก</button>
+      </form>
+      <div class="hero-note">✦ คัดสรรที่พักน่าสนใจทั่วไทย</div>
+    </section>
+
+    <section class="section container" id="stays">
+      <div class="section-heading">
+        <div><span class="eyebrow">FIND YOUR NEXT STAY</span><h2>ที่พักแนะนำสำหรับคุณ</h2><p>เลือกที่พักที่ใช่ แล้วออกเดินทางกันเลย</p></div>
+        <div class="sort-wrap"><label for="sortBy">เรียงตาม</label><select id="sortBy"><option value="recommended">แนะนำ</option><option value="low">ราคาต่ำไปสูง</option><option value="high">ราคาสูงไปต่ำ</option><option value="rating">คะแนนรีวิว</option></select></div>
+      </div>
+      <div class="filter-row">
+        <button class="filter-chip active" data-filter="ทั้งหมด">ทั้งหมด</button>
+        <button class="filter-chip" data-filter="โรงแรม">โรงแรม</button>
+        <button class="filter-chip" data-filter="รีสอร์ต">รีสอร์ต</button>
+        <button class="filter-chip" data-filter="พูลวิลล่า">พูลวิลล่า</button>
+        <span class="result-count" id="resultCount" aria-live="polite"></span>
+      </div>
+      <div class="stay-grid" id="stayGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>ไม่พบที่พักที่ตรงกับเงื่อนไข ลองเปลี่ยนจังหวัดหรือประเภทที่พัก</p>
+    </section>
+
+    <section class="why-section" id="why-us">
+      <div class="container">
+        <div class="center-heading"><span class="eyebrow">WHY THAILAND STAY</span><h2>วางแผนทริปง่ายขึ้นในทุกขั้นตอน</h2><p>ออกแบบประสบการณ์ค้นหาที่พักให้เรียบง่ายและสะดวก</p></div>
+        <div class="benefit-grid">
+          <article class="benefit"><div class="benefit-icon">⌕</div><h3>ค้นหาได้สะดวก</h3><p>เลือกจังหวัด วันเข้าพัก และจำนวนผู้เข้าพักได้ในที่เดียว</p></article>
+          <article class="benefit"><div class="benefit-icon">♡</div><h3>ตัวเลือกหลากหลาย</h3><p>พบกับโรงแรม รีสอร์ต และพูลวิลล่าหลายสไตล์</p></article>
+          <article class="benefit"><div class="benefit-icon">✓</div><h3>ขั้นตอนเข้าใจง่าย</h3><p>ดูรายละเอียดและกรอกข้อมูลการจองได้อย่างเป็นลำดับ</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container booking-section" id="my-bookings">
+      <div class="section-heading"><div><span class="eyebrow">YOUR TRIP</span><h2>การจองของฉัน</h2><p>รายการจองที่บันทึกไว้ในเบราว์เซอร์เครื่องนี้</p></div></div>
+      <div id="bookingList" class="booking-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><a class="brand footer-brand" href="#"><span class="brand-mark">T</span><span>thailand<span class="brand-light">stay</span></span></a><p>ค้นพบที่พักที่ใช่ แล้วออกไปใช้ชีวิตในแบบของคุณ</p><small>© <span id="year"></span> Thailand Stay. Demo booking website.</small></div></footer>
+
+  <dialog class="modal" id="stayModal"><button class="modal-close" data-close aria-label="ปิด">×</button><div id="stayDetail"></div></dialog>
+  <dialog class="modal booking-modal" id="bookingModal"><button class="modal-close" data-close aria-label="ปิด">×</button>
+    <div class="modal-body"><span class="eyebrow">COMPLETE YOUR BOOKING</span><h2>กรอกข้อมูลผู้จอง</h2><p class="modal-subtitle" id="bookingStayName"></p>
+      <form id="bookingForm" class="booking-form">
+        <label>ชื่อ-นามสกุล<input name="fullName" autocomplete="name" required maxlength="100" placeholder="ชื่อผู้จอง"></label>
+        <label>อีเมล<input name="email" type="email" autocomplete="email" required placeholder="name@example.com"></label>
+        <label>เบอร์โทรศัพท์<input name="phone" type="tel" autocomplete="tel" required pattern="[0-9+ -]{9,15}" placeholder="08xxxxxxxx"></label>
+        <label>หมายเหตุ (ถ้ามี)<textarea name="note" rows="3" maxlength="300" placeholder="คำขอเพิ่มเติม"></textarea></label>
+        <div class="price-summary" id="priceSummary"></div>
+        <button class="primary-button full-button" type="submit">ยืนยันการจอง (Demo)</button>
+        <p class="demo-warning">นี่คือการจองทดลอง ไม่ใช่การยืนยันห้องพักจริงหรือการชำระเงิน</p>
+      </form>
+    </div>
+  </dialog>
+  <dialog class="modal confirmation-modal" id="confirmationModal"><div class="confirmation-content"><div class="success-icon">✓</div><span class="eyebrow">BOOKING CREATED</span><h2>บันทึกการจองแล้ว</h2><p>รหัสการจองของคุณ</p><strong id="confirmationCode"></strong><p class="demo-warning">ข้อมูลนี้บันทึกไว้ในเบราว์เซอร์เครื่องนี้เท่านั้น ไม่มีการส่งไปยังที่พัก</p><button class="primary-button" id="closeConfirmation">กลับสู่หน้าหลัก</button></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
